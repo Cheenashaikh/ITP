@@ -168,13 +168,21 @@ form button:active {
     .signUpContainer {
         grid-template-columns: repeat(1, 1fr);
         padding: 1rem;
+       
     }
 
     /* .container_left, .container_right {
         min-height: auto;
         padding: 1.5rem;
     } */
+     .container_right{
+        border: 3px solid var(--primary-color);
+       
+  
+     }
+     
 .container_left{
     display: none;
+ 
 }
 }

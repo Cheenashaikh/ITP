@@ -1,7 +1,6 @@
-
-
 import React, { useState } from "react";
 import axios from "axios";
+import Cookies from "js-cookie";
 import "./signup.css";
 
 function SignUp({ onLogin }) {
@@ -16,15 +15,25 @@ function SignUp({ onLogin }) {
         setError("");
 
         try {
+            const token = "40323|eAJ5KAeDoFCb0ehCEdfDFCWmeinw0EFh5M2ijCzXc4ae63fe";
+
+            // Get CSRF token if using Laravel Sanctum
             await axios.get("/v1/sanctum/csrf-cookie", { withCredentials: true });
+
+            const csrfToken = Cookies.get("XSRF-TOKEN");
+            console.log("Username:", username);
+            console.log("Password:", password);
+
             const response = await axios.post(
                 "/v1/api/auth/login",
                 { username, password },
                 {
-                    withCredentials: true,
                     headers: {
+                        "X-XSRF-TOKEN": csrfToken,
+                        Authorization: `Bearer ${token}`,
                         "Content-Type": "application/json",
                     },
+                    withCredentials: true,
                 }
             );
 
@@ -93,3 +102,4 @@ function SignUp({ onLogin }) {
 }
 
 export default SignUp;
+
