@@ -9,7 +9,7 @@
 }
 
 .container_left {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(135deg, #363887 , #F05A26 );
     /* background: linear-gradient(135deg, var(--secondary-color), var(--primary-color)); */
     justify-content: center;
     align-items: center;

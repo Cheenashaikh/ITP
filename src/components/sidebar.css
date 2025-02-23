@@ -1,0 +1,139 @@
+.side-nav-container{
+ 
+    width: 250px;
+    height: 200vh;
+    position: relative;
+   
+    background-color: #804560;
+    margin-left: 1px;
+    padding: 20px;
+    transition: 0.4s;
+    color: #ffff;
+    z-index: 1;
+}
+.nav-menu h3{
+  
+color: #ffff;
+}
+
+.nav-option i.bi {
+    font-size: 20px;
+ 
+}
+.side-nav-container-NX{
+    width: 100px;
+}
+.nav-brand img{
+  width: 100px;
+  padding: 0px 10px;  
+}
+.nav-brand{
+    display: flex;
+}
+.nav-option {
+    display: flex;
+    flex-direction: row ;
+    gap: 20px;
+    align-items: center;
+    width: 210px;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-option i,
+.nav-option h3 {
+  /* color: var(--primary-color);  */
+  color: #ffff;
+  transition: color 0.3s ease-in-out;
+  margin-top: 20px;
+}
+
+.nav-option:hover i,
+.nav-option:hover h3 {
+  color: var(--secondary-color); 
+}
+
+.nav-upper,
+.nav-heading,
+.nav-menu{
+    display: grid;
+}
+
+.hamburger{
+    background: none;
+    cursor: pointer;
+    border: none;
+    margin: auto;
+position: absolute;
+right: 0;
+margin-right: 10px;
+}
+.hamburger span{
+    display: block;
+    margin-top: 5px;
+    /* background: var(--primary-color); */
+    background: #fff;
+    border-radius: 15px;
+    height: 2px;
+    width: 20px;
+    transition: 0.4s;
+
+}
+
+.hamburger:hover span{
+    background-color: var(--secondary-color);
+}
+.hamburger-in:hover span :nth-child(1){
+    width: 25px;
+    transform: translateY(4px) rotate(-25deg);
+}
+
+.hamburger-in:hover span :nth-child(2){
+width: 40px;
+}
+.hamburger-in:hover span :nth-child(3){
+    width: 25px;
+    transform: translateY(-4px) rotate(25deg);
+}
+.hamburger-out {
+	margin-left: 24px;
+}
+.hamburger-out:hover span:nth-child(1) {
+	width: 25px;
+	transform: translate(14px, 4px) rotate(-155deg);
+}
+.hamburger-out:hover span:nth-child(2) {
+	width: 40px;
+}
+.hamburger-out:hover span:nth-child(3) {
+	width: 25px;
+	transform: translate(14px, -4px) rotate(155deg);
+}
+.nav-menu {
+	/* grid-template-rows: repeat(7, 1fr);
+	margin-top: 50px; */
+}
+
+.menu-item-NX {
+	margin: auto;
+
+}
+.menu-item-NX .nav-option h3 {
+    display: none;
+}
+
+@media screen and (max-width: 576px) {
+    .side-nav-container {
+        height: 210vh;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .side-nav-container {
+        height: 240vh;
+    }
+}
+@media screen and (max-width: 320px) {
+    .side-nav-container {
+        height: 250vh;
+    }
+}
