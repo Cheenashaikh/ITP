@@ -224,6 +224,9 @@ button{
     }
 
 }
+.span span{
+    cursor: pointer;
+}
 
 .modal-overlay {
     position: fixed;

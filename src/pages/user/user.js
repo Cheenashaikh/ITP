@@ -69,9 +69,7 @@ function User() {
   
 
   const handleSaveEdit = async () => {
-    console.log("editRowData before update:", editRowData); // Debugging
-  
-    const recordId = editRowData.violator_id; 
+    const recordId = editRowData.violator_id;
     if (!recordId) {
       console.error("No valid identifier (violator_id) for editing:", editRowData);
       return;
@@ -79,10 +77,18 @@ function User() {
   
     try {
       
+      const token = "8461|EKagm02MBQhiTQBDyhFnaixQToTQZSt447WfcYFL4b59a072";
       const response = await axios.put(
         `/v1/api/violatorPaymentInfoFront/${recordId}`,
-        editRowData, 
-        
+        editRowData,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+          withCredentials: true,
+          timeout: 60000,
+        }
       );
   
       if (response.status === 200) {
@@ -99,13 +105,21 @@ function User() {
       console.error("Error updating record:", error);
     }
   };
-  
   const handleDelete = async (id) => {
     try {
-      const response = await axios.delete(`/v1/api/violatorPaymentInfoFront/${id}`);
-
+      const token = "8461|EKagm02MBQhiTQBDyhFnaixQToTQZSt447WfcYFL4b59a072";
+      const response = await axios.get(`/v1/api/violatorPaymentInfoFront/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+        timeout: 60000,
+      });
+  
       if (response.status === 200) {
-        setData((prevData) => prevData.filter((item) => item._id !== id));
+        setData((prevData) => prevData.filter((item) => item.violator_id !== id));
+
       } else {
         console.error("Failed to delete record:", response);
       }
@@ -145,7 +159,7 @@ function User() {
         accessor: "_id",
         Cell: ({ row }) => (
           <>
-            <span onClick={() => handleEditClick(row)} className="icon edit-icon">
+            <span onClick={() => handleEditClick(row)} className="icon edit-icon span">
               <FaEdit />
             </span>
             <span onClick={() => handleDelete(row.original._id)} className="icon delete-icon">

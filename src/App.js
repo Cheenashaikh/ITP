@@ -7,6 +7,10 @@ import SignUp from "./pages/signUp";
 import Sidebar from "./components/sidebar";
 import Dashboard from "./pages/dashboard";
 import User from "./pages/user/user";
+import Digital from "./pages/digital";
+import Verify from "./pages/verify";
+import Enforcement from "./pages/enforcement";
+import EWarning from "./pages/eWarning"
 function App() {
   const [loggedIn, setLoggedIn] = useState(null);
 
@@ -49,12 +53,52 @@ function App() {
                 path="/User"
                 element={
                   loggedIn ? (
-                    <User user={loggedIn} />
+                    <User />
                   ) : (
                     <Navigate to="/" replace />
                   )
                 }
               />
+
+              <Route
+                path="/digital"
+                element={
+                  loggedIn ? (
+                    <Digital user={loggedIn} />
+                  ) : (
+                    <Navigate to="/" replace />
+                  )
+                }
+              />
+
+              <Route
+                path="/verify"
+                element={
+                  loggedIn ? (
+                    <Verify user={loggedIn} />
+                  ) : (
+                    <Navigate to="/" replace />
+                  )
+                }
+              />
+              <Route
+                path="/enforcement"
+                element={
+                  loggedIn ? (
+                    <Enforcement user={loggedIn} />
+                  ) : (
+                    <Navigate to="/" replace />
+                  )
+                }
+              />
+
+              <Route
+                path="/warning"
+                element={
+                  loggedIn ? <EWarning user={loggedIn} /> : <Navigate to="/" replace />
+                }
+              />
+
             </Routes>
           </div>
         </div>
