@@ -17,7 +17,7 @@ function SignUp({ onLogin }) {
         try {
             const token = "40323|eAJ5KAeDoFCb0ehCEdfDFCWmeinw0EFh5M2ijCzXc4ae63fe";
 
-            // Get CSRF token if using Laravel Sanctum
+        
             await axios.get("/v1/sanctum/csrf-cookie", { withCredentials: true });
 
             const csrfToken = Cookies.get("XSRF-TOKEN");
@@ -62,7 +62,7 @@ function SignUp({ onLogin }) {
             <div className="container_right">
                 <div className="content">
                     <img
-                        src="http://103.209.53.71/layout/images/logo-dark.svg"
+                        src="https://timepay.com.pk/wp-content/uploads/2024/08/timepayweblogo.png"
                         alt="logo"
                         className="logo"
                     />

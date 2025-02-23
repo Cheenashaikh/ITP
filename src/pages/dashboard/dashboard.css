@@ -1,0 +1,154 @@
+.main-container {
+   
+ 
+    margin-left: 300px;
+
+    margin-top: -92%;
+ 
+  
+}
+.main-container h1{
+    /* color: var(--primary-color); */
+    background: linear-gradient(135deg, #363887, #F05A26);
+    -webkit-background-clip: text;
+    color: transparent;
+    
+    margin-bottom: 30px;
+}
+.main-cards{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+
+}
+
+.main-title {
+    color: var(--primary-color);
+}
+
+
+.card {
+
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px #888888;
+    width: 45vh;
+    height: 35vh;
+    animation: fadeIn 0.6s ease-out;
+ /* color: var(--secondary-color); */
+ color: var(--primary-color);
+    background-color: var(--white);
+    position: relative;
+   margin-bottom: 40px;
+ 
+
+}
+
+/* .card_iicon{
+    color: #FFE1D1;
+    background-color: #E54C32;
+    border: 1px solid;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+
+} */
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card-inner {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 10px;
+   
+   
+}
+
+.card-inner p{
+    color: var(--primary-color);
+}
+.card_iicon {
+    font-size: 24px;
+}
+
+@media screen and (max-width:768px) {
+    .main-container{
+        margin-top: -200vh;
+  
+        margin-left: 270px;
+        
+    }
+    .main-cards{
+      
+        grid-template-columns: repeat(2,1fr);
+    
+    }
+    .card{
+        margin-bottom: 30px;
+        width: 30vh;
+    }
+    
+    
+}
+@media screen and (max-width:576px) {
+    .main-container{
+        margin-top: -210vh;
+    
+       
+        gap: 20px;
+        
+    }
+    .main-cards{
+    
+        grid-template-columns: repeat(1,1fr);
+    
+    }
+    .card {
+        width: 45vh;
+        height: 42vh;
+      
+    }
+    
+}
+
+@media screen and (max-width:480px) {
+    .main-container{
+        margin-top: -240vh;
+        /* grid-template-columns: repeat(1,1fr); */
+       margin-left: 140px;
+        gap: 20px;
+   
+        
+    }
+    .card {
+        width: 45vh;
+        height: 45vh;
+        margin-left: -10px;
+    }
+    
+}
+@media screen and (max-width:320px) {
+    .main-container{
+        margin-top: -250vh;
+        margin-left: 120px;
+     
+     
+        
+    }
+    .card {
+        width: 35vh;
+        height: 50vh;
+        z-index: -1;
+    }
+    
+}
